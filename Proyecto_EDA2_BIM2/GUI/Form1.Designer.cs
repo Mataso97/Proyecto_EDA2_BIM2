@@ -108,6 +108,8 @@
             // 
             // encryptPageKeyTB
             // 
+            this.encryptPageKeyTB.AutoRoundedCorners = true;
+            this.encryptPageKeyTB.BorderRadius = 17;
             this.encryptPageKeyTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.encryptPageKeyTB.DefaultText = "";
             this.encryptPageKeyTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -115,7 +117,7 @@
             this.encryptPageKeyTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.encryptPageKeyTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.encryptPageKeyTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.encryptPageKeyTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encryptPageKeyTB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.encryptPageKeyTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.encryptPageKeyTB.Location = new System.Drawing.Point(340, 31);
             this.encryptPageKeyTB.Margin = new System.Windows.Forms.Padding(4);
@@ -128,36 +130,41 @@
             // 
             // encryptButton
             // 
+            this.encryptButton.AutoRoundedCorners = true;
+            this.encryptButton.BorderRadius = 23;
             this.encryptButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.encryptButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.encryptButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.encryptButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.encryptButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encryptButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.encryptButton.ForeColor = System.Drawing.Color.White;
             this.encryptButton.Location = new System.Drawing.Point(157, 623);
             this.encryptButton.Name = "encryptButton";
-            this.encryptButton.Size = new System.Drawing.Size(180, 36);
+            this.encryptButton.Size = new System.Drawing.Size(180, 48);
             this.encryptButton.TabIndex = 6;
             this.encryptButton.Text = "Encriptar";
             this.encryptButton.Click += new System.EventHandler(this.encryptButton_Click);
             // 
             // openFileButton
             // 
+            this.openFileButton.AutoRoundedCorners = true;
+            this.openFileButton.BorderRadius = 23;
             this.openFileButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.openFileButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.openFileButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.openFileButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.openFileButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openFileButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.openFileButton.ForeColor = System.Drawing.Color.White;
             this.openFileButton.Location = new System.Drawing.Point(435, 623);
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(180, 36);
+            this.openFileButton.Size = new System.Drawing.Size(180, 48);
             this.openFileButton.TabIndex = 5;
-            this.openFileButton.Text = "Abrir archivo";
+            this.openFileButton.Text = "Abrir archivo a encriptar";
             this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
             // 
             // plainTextRTB
             // 
+            this.plainTextRTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plainTextRTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plainTextRTB.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.plainTextRTB.Location = new System.Drawing.Point(230, 96);
@@ -186,11 +193,13 @@
             // 
             // SaveFileDecryptedButton
             // 
+            this.SaveFileDecryptedButton.AutoRoundedCorners = true;
+            this.SaveFileDecryptedButton.BorderRadius = 23;
             this.SaveFileDecryptedButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.SaveFileDecryptedButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.SaveFileDecryptedButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.SaveFileDecryptedButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SaveFileDecryptedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveFileDecryptedButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.SaveFileDecryptedButton.ForeColor = System.Drawing.Color.White;
             this.SaveFileDecryptedButton.Location = new System.Drawing.Point(509, 624);
             this.SaveFileDecryptedButton.Name = "SaveFileDecryptedButton";
@@ -201,6 +210,7 @@
             // 
             // encryptedTextRTB
             // 
+            this.encryptedTextRTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.encryptedTextRTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.encryptedTextRTB.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.encryptedTextRTB.Location = new System.Drawing.Point(19, 103);
@@ -213,7 +223,7 @@
             // 
             this.decryptPageKeyLabel.BackColor = System.Drawing.Color.Transparent;
             this.decryptPageKeyLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.decryptPageKeyLabel.Location = new System.Drawing.Point(19, 31);
+            this.decryptPageKeyLabel.Location = new System.Drawing.Point(19, 36);
             this.decryptPageKeyLabel.Name = "decryptPageKeyLabel";
             this.decryptPageKeyLabel.Size = new System.Drawing.Size(148, 30);
             this.decryptPageKeyLabel.TabIndex = 14;
@@ -221,6 +231,8 @@
             // 
             // decryptPageKeyTB
             // 
+            this.decryptPageKeyTB.AutoRoundedCorners = true;
+            this.decryptPageKeyTB.BorderRadius = 17;
             this.decryptPageKeyTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.decryptPageKeyTB.DefaultText = "";
             this.decryptPageKeyTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -228,24 +240,26 @@
             this.decryptPageKeyTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.decryptPageKeyTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.decryptPageKeyTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.decryptPageKeyTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.decryptPageKeyTB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.decryptPageKeyTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.decryptPageKeyTB.Location = new System.Drawing.Point(202, 31);
+            this.decryptPageKeyTB.Location = new System.Drawing.Point(201, 36);
             this.decryptPageKeyTB.Margin = new System.Windows.Forms.Padding(4);
             this.decryptPageKeyTB.Name = "decryptPageKeyTB";
             this.decryptPageKeyTB.PasswordChar = '\0';
             this.decryptPageKeyTB.PlaceholderText = "";
             this.decryptPageKeyTB.SelectedText = "";
-            this.decryptPageKeyTB.Size = new System.Drawing.Size(275, 36);
+            this.decryptPageKeyTB.Size = new System.Drawing.Size(293, 36);
             this.decryptPageKeyTB.TabIndex = 13;
             // 
             // decryptButton
             // 
+            this.decryptButton.AutoRoundedCorners = true;
+            this.decryptButton.BorderRadius = 23;
             this.decryptButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.decryptButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.decryptButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.decryptButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.decryptButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.decryptButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.decryptButton.ForeColor = System.Drawing.Color.White;
             this.decryptButton.Location = new System.Drawing.Point(91, 624);
             this.decryptButton.Name = "decryptButton";
@@ -256,13 +270,15 @@
             // 
             // OpenEncryptedFileButton
             // 
+            this.OpenEncryptedFileButton.AutoRoundedCorners = true;
+            this.OpenEncryptedFileButton.BorderRadius = 22;
             this.OpenEncryptedFileButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.OpenEncryptedFileButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.OpenEncryptedFileButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.OpenEncryptedFileButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.OpenEncryptedFileButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenEncryptedFileButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.OpenEncryptedFileButton.ForeColor = System.Drawing.Color.White;
-            this.OpenEncryptedFileButton.Location = new System.Drawing.Point(543, 31);
+            this.OpenEncryptedFileButton.Location = new System.Drawing.Point(573, 25);
             this.OpenEncryptedFileButton.Name = "OpenEncryptedFileButton";
             this.OpenEncryptedFileButton.Size = new System.Drawing.Size(180, 47);
             this.OpenEncryptedFileButton.TabIndex = 11;
@@ -271,6 +287,7 @@
             // 
             // decryptedTextRTB
             // 
+            this.decryptedTextRTB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.decryptedTextRTB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.decryptedTextRTB.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.decryptedTextRTB.Location = new System.Drawing.Point(424, 103);

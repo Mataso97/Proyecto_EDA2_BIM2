@@ -19,37 +19,28 @@ namespace Proyecto_EDA2_BIM2
         public Form1()
         {
             InitializeComponent();
-
-            // string plainText = "Hola mundo!";
-            //string plainText = "El objetivo del proyecto se enfoca en desarrollar su propio algoritmo para encriptar y desencriptar información leída de archivos" +
-                         //      " con los conceptos aprendidos en clases. y mediante una opción realizar la encriptación y guardado de datos de este archivo. " +
-                          //     "Igualmente debe existir la opción para desencriptar el archivo y guardar el archivo desencriptado. ";
-            //string key = "clave123";
-
-            //string cipherText = GedaEncryption.Encrypt(plainText, key);
-            //encryptedTextRTB.Text += "Texto encriptado: " + cipherText + "\n\n";
-
-            //string decryptedText = GedaEncryption.Decrypt(cipherText, key);
-            //plainTextRTB.Text +=  "\n\nTexto desencriptado: " + decryptedText;
-
         }
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                //openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //Get the path of specified file
+                    // Obtener la ruta del archivo especificado
                     filePath = openFileDialog.FileName;
-                    plainTextRTB.LoadFile(filePath, RichTextBoxStreamType.PlainText);
+
+                    using (StreamReader reader = new StreamReader(filePath, Encoding.UTF8))
+                    {
+                        // Procesa el contenido del archivo
+                        string content = reader.ReadToEnd();
+                        plainTextRTB.Text = content;
+                    }
                 }
             }
-
         }
 
         private void encryptButton_Click(object sender, EventArgs e)
@@ -75,6 +66,8 @@ namespace Proyecto_EDA2_BIM2
                     }
                 }
 
+                encryptPageKeyTB.Text = string.Empty;
+                plainTextRTB.Text = string.Empty;
             }
             else
             {
@@ -101,15 +94,19 @@ namespace Proyecto_EDA2_BIM2
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                //openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //Get the path of specified file
+                    // Obtener la ruta del archivo especificado
                     filePath = openFileDialog.FileName;
-                    encryptedTextRTB.LoadFile(filePath, RichTextBoxStreamType.PlainText);
+                    using (StreamReader reader = new StreamReader(filePath, Encoding.UTF8))
+                    {
+                        // Procesa el contenido del archivo
+                        string content = reader.ReadToEnd();
+                        encryptedTextRTB.Text = content;
+                    }
                 }
             }
         }
@@ -130,6 +127,9 @@ namespace Proyecto_EDA2_BIM2
                     }
                 }
             }
+            decryptPageKeyTB.Text = string.Empty;
+            encryptedTextRTB.Text = string.Empty;
+            decryptedTextRTB.Text = string.Empty;
         }
     }
 }
