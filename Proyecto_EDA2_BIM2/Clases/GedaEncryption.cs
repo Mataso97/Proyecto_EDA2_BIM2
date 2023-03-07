@@ -9,7 +9,7 @@ namespace Proyecto_EDA2_BIM2.Clases
 {
     public class GedaEncryption
     {
-        public const string alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ013456789áéíóúÁÉÍÓÚ:;,.-?¿!¡\"\"\'\'(){}[]<>|@#$%&/=+*^`~_ ";
+        private const string alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789áéíóúÁÉÍÓÚ:;,.-?¿!¡\"\"''(){}[]<>|@#$%&/=+*^`~_ ";
         private static string Encrypt(string plainText, long shift, int[] permutation)
         {
             char[] chars = plainText.ToCharArray();
