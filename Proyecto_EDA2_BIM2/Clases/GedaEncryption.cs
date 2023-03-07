@@ -76,21 +76,22 @@ namespace Proyecto_EDA2_BIM2.Clases
             {
                 shift = -shift;
             }
-            Random rand = new Random(key.GetHashCode());
+            Random rand = new Random(key.GetHashCode() % );
             int[] permutation = Enumerable.Range(0, cipherText.Length).ToArray();
             permutation = Shuffle(permutation, rand);
             return Decrypt(cipherText, shift, permutation);
         }
 
-        public static int[] Shuffle(int[] array, Random seet)
+        public static int[] Shuffle(int[] array, Random seed)
         {
-            Random random = seet;
-            for (int i = array.Length - 1; i > 0; i--)
+            Random random = seed;
+            int n = array.Length;
+            for (int i = 0; i < n; i++)
             {
-                int j = random.Next(i + 1);
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                int j = i + random.Next(n - i);
+                int temp = array[j];
+                array[j] = array[i];
+                array[i] = temp;
             }
             return array;
         }
