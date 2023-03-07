@@ -76,7 +76,7 @@ namespace Proyecto_EDA2_BIM2.Clases
             {
                 shift = -shift;
             }
-            Random rand = new Random(key.GetHashCode() % );
+            Random rand = new Random(key.GetHashCode());
             int[] permutation = Enumerable.Range(0, cipherText.Length).ToArray();
             permutation = Shuffle(permutation, rand);
             return Decrypt(cipherText, shift, permutation);
