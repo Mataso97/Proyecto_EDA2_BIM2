@@ -9,8 +9,8 @@ namespace Proyecto_EDA2_BIM2.Clases
 {
     public class GedaEncryption
     {
-        public const string alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ013456789áéíóúÁÉÍÓÚ:;,.-?¿!¡\"\"\'\'(){}[]<>|@#$%&/=+*^`~_ ";
-        private static string Encrypt(string plainText, long shift, int[] permutation)
+        private const string alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789áéíóúÁÉÍÓÚ:;,.-?¿!¡\"\"''(){}[]<>|@#$%&/=+*^`~_ ";
+        private static string Encrypt(string plainText, int shift, int[] permutation)
         {
             char[] chars = plainText.ToCharArray();
             
@@ -34,7 +34,7 @@ namespace Proyecto_EDA2_BIM2.Clases
             return new string(chars);
         }
 
-        private static string Decrypt(string cipherText, long shift, int[] permutation)
+        private static string Decrypt(string cipherText, int shift, int[] permutation)
         {
             char[] chars = cipherText.ToCharArray();
             for (int i = permutation.Length - 1; i >= 0; i--)
@@ -46,7 +46,7 @@ namespace Proyecto_EDA2_BIM2.Clases
             }
             for (int i = 0; i < chars.Length; i++)
             {
-                long position = alphabet.IndexOf(chars[i]);
+                int position = alphabet.IndexOf(chars[i]);
                 if (position >= 0)
                 {
                     int newPosition = (int)((position - shift + alphabet.Length) % alphabet.Length);
@@ -58,27 +58,27 @@ namespace Proyecto_EDA2_BIM2.Clases
 
         public static string Encrypt(string plainText, string key)
         {
-            long shift = key.GetHashCode() % alphabet.Length;
+            int shift = key.GetHashCode() % alphabet.Length;
+            MessageBox.Show(shift.ToString());
             if (shift < 0) 
             {
                 shift = -shift;
             }
             Random rand = new Random(key.GetHashCode());
-            var y = rand.Next();
-            int[] permutation = Enumerable.Range(0, plainText.Length).OrderBy(x => y).ToArray();
+            int[] permutation = Enumerable.Range(0, plainText.Length).OrderBy(x => rand.Next()).ToArray();
             return Encrypt(plainText, shift, permutation);
         }
 
         public static string Decrypt(string cipherText, string key)
         {
-            long shift = key.GetHashCode() % alphabet.Length;
+            int shift = key.GetHashCode() % alphabet.Length;
+            MessageBox.Show(shift.ToString());
             if (shift < 0)
             {
                 shift = -shift;
             }
             Random rand = new Random(key.GetHashCode());
-            var y = rand.Next();
-            int[] permutation = Enumerable.Range(0, cipherText.Length).OrderBy(x => y).ToArray();
+            int[] permutation = Enumerable.Range(0, cipherText.Length).OrderBy(x => rand.Next()).ToArray();
             return Decrypt(cipherText, shift, permutation);
         }
     }
