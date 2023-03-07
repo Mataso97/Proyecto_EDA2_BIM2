@@ -64,8 +64,8 @@ namespace Proyecto_EDA2_BIM2.Clases
                 shift = -shift;
             }
             Random rand = new Random(key.GetHashCode());
-            int[] permutation = Enumerable.Range(0, plainText.Length).ToArray();
-            permutation = Shuffle(permutation, rand);
+            int[] permutation = Enumerable.Range(0, plainText.Length).OrderBy(x=>rand.Next()).ToArray();
+            //permutation = Shuffle(permutation, rand);
             return Encrypt(plainText, shift, permutation);
         }
 
@@ -77,14 +77,14 @@ namespace Proyecto_EDA2_BIM2.Clases
                 shift = -shift;
             }
             Random rand = new Random(key.GetHashCode());
-            int[] permutation = Enumerable.Range(0, cipherText.Length).ToArray();
-            permutation = Shuffle(permutation, rand);
+            int[] permutation = Enumerable.Range(0, cipherText.Length).OrderBy(x => rand.Next()).ToArray();
+            //permutation = Shuffle(permutation, rand);
             return Decrypt(cipherText, shift, permutation);
         }
 
-        public static int[] Shuffle(int[] array, Random seet)
+        public static int[] Shuffle(int[] array, Random seed)
         {
-            Random random = seet;
+            Random random = seed;
             for (int i = array.Length - 1; i > 0; i--)
             {
                 int j = random.Next(i + 1);
