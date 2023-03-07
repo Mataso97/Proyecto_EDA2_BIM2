@@ -13,7 +13,7 @@ namespace Proyecto_EDA2_BIM2.Clases
         private static string Encrypt(string plainText, long shift, int[] permutation)
         {
             char[] chars = plainText.ToCharArray();
-            
+
             for (int i = 0; i < chars.Length; i++)
             {
                 int position = alphabet.IndexOf(chars[i]);
@@ -23,8 +23,8 @@ namespace Proyecto_EDA2_BIM2.Clases
                     chars[i] = alphabet[newPosition];
                 }
             }
-            
-                for (int i = 0; i < permutation.Length; i++)
+
+            for (int i = 0; i < permutation.Length; i++)
             {
                 int j = permutation[i];
                 char temp = chars[i];
@@ -59,13 +59,13 @@ namespace Proyecto_EDA2_BIM2.Clases
         public static string Encrypt(string plainText, string key)
         {
             long shift = key.GetHashCode() % alphabet.Length;
-            if (shift < 0) 
+            if (shift < 0)
             {
                 shift = -shift;
             }
             Random rand = new Random(key.GetHashCode());
-            var y = rand.Next();
-            int[] permutation = Enumerable.Range(0, plainText.Length).OrderBy(x => y).ToArray();
+            int[] permutation = Enumerable.Range(0, plainText.Length).ToArray();
+            permutation = Shuffle(permutation, rand);
             return Encrypt(plainText, shift, permutation);
         }
 
@@ -77,9 +77,23 @@ namespace Proyecto_EDA2_BIM2.Clases
                 shift = -shift;
             }
             Random rand = new Random(key.GetHashCode());
-            var y = rand.Next();
-            int[] permutation = Enumerable.Range(0, cipherText.Length).OrderBy(x => y).ToArray();
+            int[] permutation = Enumerable.Range(0, cipherText.Length).ToArray();
+            permutation = Shuffle(permutation, rand);
             return Decrypt(cipherText, shift, permutation);
         }
+
+        public static int[] Shuffle(int[] array, Random seet)
+        {
+            Random random = seet;
+            for (int i = array.Length - 1; i > 0; i--)
+            {
+                int j = random.Next(i + 1);
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
     }
 }
