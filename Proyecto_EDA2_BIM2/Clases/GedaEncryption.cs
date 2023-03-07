@@ -59,7 +59,6 @@ namespace Proyecto_EDA2_BIM2.Clases
         public static string Encrypt(string plainText, string key)
         {
             int shift = key.GetHashCode() % alphabet.Length;
-            MessageBox.Show(shift.ToString());
             if (shift < 0) 
             {
                 shift = -shift;
@@ -72,7 +71,6 @@ namespace Proyecto_EDA2_BIM2.Clases
         public static string Decrypt(string cipherText, string key)
         {
             int shift = key.GetHashCode() % alphabet.Length;
-            MessageBox.Show(shift.ToString());
             if (shift < 0)
             {
                 shift = -shift;
