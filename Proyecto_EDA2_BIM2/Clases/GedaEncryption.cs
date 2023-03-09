@@ -9,7 +9,7 @@ namespace Proyecto_EDA2_BIM2.Clases
 {
     public class GedaEncryption
     {
-        private const string alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789áéíóúÁÉÍÓÚ:;,.-?¿!¡\"\"''(){}[]<>|@#$%&/=+*^`~_ ";
+        private const string alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789áéíóúÁÉÍÓÚ:;,.-?¿!¡\"'(){}[]<>|@#$%&/=+*^`~_\n\t\b";
         private static string Encrypt(string plainText, int shift, int[] permutation)
         {
             char[] chars = plainText.ToCharArray();
@@ -19,7 +19,7 @@ namespace Proyecto_EDA2_BIM2.Clases
                 int position = alphabet.IndexOf(chars[i]);
                 if (position >= 0)
                 {
-                    int newPosition = (int)(position + shift) % alphabet.Length;
+                    int newPosition = (position + shift) % alphabet.Length;
                     chars[i] = alphabet[newPosition];
                 }
             }
@@ -49,7 +49,7 @@ namespace Proyecto_EDA2_BIM2.Clases
                 int position = alphabet.IndexOf(chars[i]);
                 if (position >= 0)
                 {
-                    int newPosition = (int)((position - shift + alphabet.Length) % alphabet.Length);
+                    int newPosition = (position - shift + alphabet.Length) % alphabet.Length;
                     chars[i] = (alphabet[newPosition]);
                 }
             }

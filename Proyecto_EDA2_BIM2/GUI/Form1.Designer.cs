@@ -122,11 +122,12 @@
             this.encryptPageKeyTB.Location = new System.Drawing.Point(340, 31);
             this.encryptPageKeyTB.Margin = new System.Windows.Forms.Padding(4);
             this.encryptPageKeyTB.Name = "encryptPageKeyTB";
-            this.encryptPageKeyTB.PasswordChar = '\0';
+            this.encryptPageKeyTB.PasswordChar = '●';
             this.encryptPageKeyTB.PlaceholderText = "";
             this.encryptPageKeyTB.SelectedText = "";
             this.encryptPageKeyTB.Size = new System.Drawing.Size(275, 36);
             this.encryptPageKeyTB.TabIndex = 8;
+            this.encryptPageKeyTB.UseSystemPasswordChar = true;
             // 
             // encryptButton
             // 
@@ -245,11 +246,12 @@
             this.decryptPageKeyTB.Location = new System.Drawing.Point(201, 36);
             this.decryptPageKeyTB.Margin = new System.Windows.Forms.Padding(4);
             this.decryptPageKeyTB.Name = "decryptPageKeyTB";
-            this.decryptPageKeyTB.PasswordChar = '\0';
+            this.decryptPageKeyTB.PasswordChar = '●';
             this.decryptPageKeyTB.PlaceholderText = "";
             this.decryptPageKeyTB.SelectedText = "";
             this.decryptPageKeyTB.Size = new System.Drawing.Size(293, 36);
             this.decryptPageKeyTB.TabIndex = 13;
+            this.decryptPageKeyTB.UseSystemPasswordChar = true;
             // 
             // decryptButton
             // 
